@@ -3,6 +3,7 @@
 use utf8;
 use v5.28;
 use strict;
+use Pod::Usage;
 use SVN::Notify;
 use Term::ANSIColor;
 
@@ -10,18 +11,11 @@ $| = 1;
 binmode STDOUT, ":utf8";
 
 #console colors
-my ($bld, $rst, $rd) = (color('bold'), color('reset'), color('red'));
+my ($rst, $rd) = (color('reset'), color('red'));
 my $file = $ARGV[0];
 
 unless (defined $file && -e $file && -r $file && !-z $file){
-  say $bld . "┌════════════════┐" .$rst;
-  say $bld . "│  Decompressor  │" .$rst;
-  say $bld . "└════════════════┘" .$rst . $rd. "...v1.0" . $rst;
-  say '-' x 38;
-  say("uc <file>");
-  say($bld."Example:".$rst." uc test.gz2");
-  say '═' x 38;
-  exit 1;
+  pod2usage(1);
 }
 
 # add rmp, Z
@@ -67,3 +61,23 @@ sub decompress {
 }
 
 &decompress($file);
+__END__
+
+=head1 NAME
+
+uc - A linux/macOS decompressing utility.
+
+=head1 SYNOPSIS
+
+uc [file]
+
+=head1 DESCRIPTION
+
+A small decompressing utility, for linux and macOS operating systems, able
+to decompress over 10 different filetypes with a single command, automatically.
+
+=head1 EXAMPLE
+
+uc test.bz2
+
+=cut
