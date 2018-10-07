@@ -20,7 +20,7 @@ The script has been successfully tested on _linux_ and _macOS_ operating systems
 
 ### Installation:
 
-The best way to use this script is to create an _alias_ command. `setup.sh` script (_may need to be executed with root privileges_) automatically installs the perl-dependencies and creates an alias command `uc`:
+The best way to use this script is to create an _alias_ command. `setup.sh` script  automatically installs the perl-dependencies and creates an alias command `uc` (_or what other name you prefer_):
 
 <img src="images/decompressor.png" width="70%">
 
