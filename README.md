@@ -1,20 +1,14 @@
 # Decompressor [![GPLv3 license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/chrispetrou/Decompressor/blob/master/LICENSE)
 
-**Decompressor** is a _perl_ script and unix utility that automates the process of decompressing data by invoking the appropriate command. For the time it can automatically decompress the following filetypes:
+**Decompressor** is a _perl_ script and unix utility that automates the process of decompressing data by invoking the appropriate command. For the time it can automatically decompress the following archive formats:
 
-Filetypes |
-|-|
-| z |
-| 7z |
-| gz |
-| zip |
-| tar |
-| deb |
-| rar |
-| xar |
-| pkg |
-| arj |
-| bz2 |
+| z | Z |
+| xz | gz |
+| 7z | rz |
+| bz2 | arj |
+| zip | pkg |
+| tar | rar |
+| xar | deb |
 
 The script has been successfully tested on _linux_ and _macOS_ operating systems.
 

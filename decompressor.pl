@@ -10,22 +10,21 @@ use Term::ANSIColor;
 $| = 1;
 binmode STDOUT, ":utf8";
 
-#console colors
-my ($rst, $rd) = (color('reset'), color('red'));
 my $file = $ARGV[0];
+my ($rst, $rd) = (color('reset'), color('red'));
 
 unless (defined $file && -e $file && -r $file && !-z $file){
   pod2usage(1);
 }
 
-# add rmp, Z
 my %ucomp = (
   "7z" => "7z x",     zip  => "unzip",
-    z  => "gzip -d",  tar  => "tar xvf",
+    z  => "gzip -d",  Z    => "gzip -d",
+   xz  => "tar xfJ",  rz   => "rzip -d",
   deb  => "dpkg -x",  rar  => "unrar x",
-  xar  => "xar -xvf", pkg  => "xar -xvf",
-  gz   => "tar xvzf", arj  => "arj e -r -y", 
-  bz2  => "tar xvjf"
+  xar  => "xar -xvf", tar  => "tar xvf",
+   gz  => "tar xvzf", pkg  => "xar -xvf", 
+  bz2  => "tar xvjf", arj  => "arj e -r -y"
 );
 
 sub check_util {
