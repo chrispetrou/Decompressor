@@ -35,6 +35,7 @@ Since the script works by invoking the appropriate, based on the filetype, comma
 *   dpkg
 *   xar
 *   tar
+*   rzip
 *   unzip
 *   unrar
 *   arj (_linux_) / unarj (_macOS_)
