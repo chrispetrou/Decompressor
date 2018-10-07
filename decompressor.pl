@@ -30,11 +30,7 @@ my %ucomp = (
 
 sub check_util {
   unless (SVN::Notify->find_exe($_[0])) {
-    if ($^O eq "darwin" && $_[0] eq "arj") {
-      say($rd."[!] unarj is not installed...".$rst);
-    } else {
-      say($rd."[!] $_[0] is not installed...".$rst);
-    }
+    say($rd."[!] $_[0] is not installed...".$rst);
     exit 1;
   }
 }
@@ -42,20 +38,16 @@ sub check_util {
 sub decompress {
   if ($file =~ m/.*[.]([\w]+)$/i){
     my @util = split /\s+/, "$ucomp{$1}";
-    &check_util($util[0]);
-    
-    if ($1 eq "deb") {
-      `$ucomp{$1} $file $ENV{'PWD'}`;
-    } elsif ($1 eq "arj") {
-      if ($^O eq "darwin") {
-        `unarj e $file`;
-      } else {
-        `$ucomp{$1} $file`;
-      }
+    if ($^O eq "darwin" && $util[0] eq "arj") {
+      &check_util("unarj");
     } else {
-      `$ucomp{$1} $file`;
+      &check_util($util[0]);
     }
-  } else {
+    if    ($1 eq "deb") { `$ucomp{$1} $file $ENV{'PWD'}`; }
+    elsif ($1 eq "arj") { $^O eq "darwin" ? `unarj e $file` : `$ucomp{$1} $file`; }
+    else { `$ucomp{$1} $file`; }
+  }
+  else {
     say($rd."[!] Couldn't decompress the file...".$rst);
   }
 }
