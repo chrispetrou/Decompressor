@@ -1,6 +1,6 @@
 # Decompressor [![GPLv3 license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/chrispetrou/Decompressor/blob/master/LICENSE)
 
-**Decompressor** is a _perl_ script that automates the process of decompressing data by invoking the appropriate command. For the time it can automatically decompress the following filetypes:
+**Decompressor** is a _perl_ script and unix utility that automates the process of decompressing data by invoking the appropriate command. For the time it can automatically decompress the following filetypes:
 
 Filetypes |
 |-|
