@@ -24,7 +24,8 @@ my %ucomp = (
   deb  => "dpkg -x",  rar  => "unrar x",
   xar  => "xar -xvf", tar  => "tar xvf",
    gz  => "tar xvzf", pkg  => "xar -xvf", 
-  bz2  => "tar xvjf", arj  => "arj e -r -y"
+  bz2  => "tar xvjf", tgz  => "tar -xvzf", 
+  arj  => "arj e -r -y"
 );
 
 sub check_util {
