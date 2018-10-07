@@ -2,6 +2,8 @@
 
 **Decompressor** is a _perl_ script and unix utility that automates the process of decompressing data by invoking the appropriate command. For the time it can automatically decompress the following archive formats:
 
+|||
+|-|-|
 | z | Z |
 | xz | gz |
 | 7z | rz |
