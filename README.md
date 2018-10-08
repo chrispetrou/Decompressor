@@ -4,11 +4,11 @@
 
 |||||
 |-|-|-|-|
-| z | Z | zip | deb |
-| xz | bz2 | pkg ||
-| gz | tgz | tar ||
-| 7z | lz | rar ||
-| rz | arj | xar ||
+| .z | .Z | .zip | .deb |
+| .xz | .bz2 | .pkg ||
+| .gz | .tgz | .tar ||
+| .7z | .lz | .rar ||
+| .rz | .arj | .xar ||
 
 The script has been successfully tested on _linux_ and _macOS_ operating systems.
 
