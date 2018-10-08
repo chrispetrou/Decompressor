@@ -19,13 +19,15 @@ unless (defined $file && -e $file && -r $file && !-z $file){
 
 my %ucomp = (
   "7z" => "7z x",     zip  => "unzip",
-  z    => "gzip -d",  Z    => "gzip -d",
-  xz   => "tar xfJ",  rz   => "rzip -d",
-  deb  => "dpkg -x",  rar  => "unrar x",
-  lz   => "lzip -d",  tar  => "tar xvf",
-  gz   => "tar xvzf", pkg  => "xar -xvf", 
-  bz2  => "tar xvjf", tgz  => "tar -xvzf", 
-  xar  => "xar -xvf", arj  => "arj e -r -y"
+  dmg  => "7z x",     jar  => "unzip",
+  z    => "gzip -d",  war  => "unzip",
+  Z    => "gzip -d",  apk  => "unzip",
+  xz   => "tar xfJ",  deb  => "dpkg -x",
+  rz   => "rzip -d",  lz   => "lzip -d",
+  rar  => "unrar x",  pkg  => "xar -xvf",
+  tar  => "tar xvf",  xar  => "xar -xvf",
+  gz   => "tar xvzf", tgz  => "tar xvzf",
+  bz2  => "tar xvjf", arj  => "arj e -r -y"
 );
 
 sub check_util {
@@ -45,6 +47,7 @@ sub decompress {
     }
     if    ($1 eq "deb") { `$ucomp{$1} $file $ENV{'PWD'}`; }
     elsif ($1 eq "arj") { $^O eq "darwin" ? `unarj e $file` : `$ucomp{$1} $file`; }
+    elsif ($1 eq "apk") { my @dir = split /\.apk$/, $file; `$ucomp{$1} $file -d $dir[0]`; }
     else { `$ucomp{$1} $file`; }
   }
   else {
