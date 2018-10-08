@@ -19,13 +19,13 @@ unless (defined $file && -e $file && -r $file && !-z $file){
 
 my %ucomp = (
   "7z" => "7z x",     zip  => "unzip",
-    z  => "gzip -d",  Z    => "gzip -d",
-   xz  => "tar xfJ",  rz   => "rzip -d",
+  z    => "gzip -d",  Z    => "gzip -d",
+  xz   => "tar xfJ",  rz   => "rzip -d",
   deb  => "dpkg -x",  rar  => "unrar x",
-  xar  => "xar -xvf", tar  => "tar xvf",
-   gz  => "tar xvzf", pkg  => "xar -xvf", 
+  lz   => "lzip -d",  tar  => "tar xvf",
+  gz   => "tar xvzf", pkg  => "xar -xvf", 
   bz2  => "tar xvjf", tgz  => "tar -xvzf", 
-  arj  => "arj e -r -y"
+  xar  => "xar -xvf", arj  => "arj e -r -y"
 );
 
 sub check_util {
