@@ -2,38 +2,14 @@
 
 **Decompressor** is a _perl_ script and unix utility that automates the process of decompressing data by invoking the appropriate command. For the time it can automatically decompress the following archive formats:
 
-<table>
-  <tr>
-    <th> .z</th>
-    <th>.Z</th>
-    <th>.zip</th>
-    <th>.apk</th>
-  </tr>
-  <tr>
-    <td>.xz</td>
-    <td>.bz2</td>
-    <td>.jar</td>
-    <td>.pkg</td>
-  </tr>
-  <tr>
-    <td>.gz</td>
-    <td>.tgz</td>
-    <td>.tar</td>
-    <td>.dmg</td>
-  </tr>
-  <tr>
-    <td>.7z</td>
-    <td>.lz</td>
-    <td>.rar</td>
-    <td>.war</td>
-  </tr>
-  <tr>
-    <td>.rz</td>
-    <td>.arj</td>
-    <td>.xar</td>
-    <td>.deb</td>
-  </tr>
-</table>
+|||||
+|-|-|-|-|
+| .z | .Z | .zip | .apk |
+| .xz | .bz2 | .jar | .pkg |
+| .gz | .tgz | .tar | .dmg |
+| .7z | .lz | .rar | .war |
+| .rz | .arj | .xar | .deb |
+
 The script has been successfully tested on _linux_ and _macOS_ operating systems.
 
 ### Installation:
