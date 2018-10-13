@@ -69,7 +69,7 @@ uc [file]
 =head1 DESCRIPTION
 
 A small decompressing utility, for linux and macOS operating systems, able
-to decompress over 10 different filetypes with a single command, automatically.
+to decompress a wide range of archive formats with a single command, automatically.
 
 =head1 EXAMPLE
 
