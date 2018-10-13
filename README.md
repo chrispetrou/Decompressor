@@ -10,7 +10,7 @@
 | .7z | .lz | .rar | .war |
 | .rz | .arj | .xar | .deb |
 
-The script has been successfully tested on _linux_ and _macOS_ operating systems.
+The script has been successfully tested on _**linux**_ and _**macOS**_ operating systems.
 
 ### Installation:
 
